@@ -12,8 +12,9 @@
 }
 
 //Colors
-$color-primary: #cdccd1;
+$color-primary: #fcfcfc;
 $color-secondary: #141517;
+$color-terheary: #b1b1b1;
 
 html {
     font-size: 62.5%;
@@ -35,11 +36,16 @@ body {
     align-items: flex-start;
 }
 
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: $color-secondary;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(12, 10rem);
     grid-template-rows: repeat(1, 72.4rem);
-    //gap: 2rem;
     margin: 0rem auto;
 }
 
@@ -50,7 +56,6 @@ body {
     flex-direction: column;
     grid-column: 1 / 2;
     grid-row: 1 / -1;
-    background-color: orange;
     height: 100%;
     padding: 2.5rem 1rem;
 }
@@ -64,4 +69,80 @@ body {
         height: 100%;
         object-fit: cover;
     }
+}
+
+.text {
+    grid-column: 7 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0rem 10rem;
+}
+
+span {
+    display: inline-block;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 2.5rem;
+
+    &::after,
+    &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        height: .2rem;
+        width: 100%;
+        background-color: $color-secondary;
+    }
+
+    &::after {
+        right: -110%;
+    }
+
+    &::before {
+        left: -110%;
+    }
+}
+
+h1 {
+    font-size: 5.8em;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 7.5rem;
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.15);
+}
+
+input[type="email"] {
+    flex: 3;
+    padding: 1rem 1.6rem;
+    border: none;
+    outline-width: 0;
+    background-color: $color-terheary;
+}
+
+button {
+    flex: 1;
+    padding: 1rem 1.6rem;
+    outline-width: 0;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    background-color: $color-secondary;
+    text-transform: uppercase;
+}
+
+::placeholder {
+    color: $color-secondary;
 }
