@@ -20,4 +20,25 @@ body {
   font-weight: 300;
   line-height: 140%;
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 10rem);
+  grid-template-rows: repeat(1, 72.4rem);
+  gap: 2rem;
+  margin: 0rem auto; }
+
+.sidebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+  background-color: orange;
+  height: 100%;
+  padding: 2.5rem 1rem; }
